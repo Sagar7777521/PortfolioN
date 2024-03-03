@@ -20,7 +20,7 @@ const Wrapper = styled.div`
   width: 100%;
   max-width: 1100px;
   gap: 12px;
-  @media (max-width: 960px) {
+  @media screen and (max-width: 960px) {
     flex-direction: column;
   }
 `;
@@ -31,7 +31,7 @@ export const Title = styled.div`
   font-weight: 600;
   margin-top: 20px;
   color: ${({ theme }) => theme.text_primary};
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     margin-top: 12px;
     font-size: 32px;
   }
@@ -42,7 +42,7 @@ export const Desc = styled.div`
   text-align: center;
   max-width: 600px;
   color: ${({ theme }) => theme.text_secondary};
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     font-size: 16px;
   }
 `;
@@ -64,11 +64,11 @@ const Skill = styled.div`
   box-shadow: rgba(23, 92, 230, 0.15) 0px 4px 24px;
   border-radius: 16px;
   padding: 18px 36px;
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     max-width: 400px;
     padding: 10px 36px;
   }
-  @media (max-width: 500px) {
+  @media screen and (max-width: 500px) {
     max-width: 330px;
     padding: 10px 36px;
   }
