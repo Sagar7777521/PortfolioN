@@ -158,7 +158,7 @@ export const MobileMenuLink = styled(LinkR)`
 `;
 
 const Navbar = () => {
-  const [open, setOpen] = React.useSate(false);
+  const [open, setOpen] = React.useState(false);
   const theme = useTheme();
 
   return (

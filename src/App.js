@@ -36,10 +36,10 @@ function App() {
         <Navbar />
         <Body>
           <Herosection />
-          <Wrapper>
+          {/* <Wrapper>
             <Skills />
             <Education />
-          </Wrapper>
+          </Wrapper> */}
         </Body>
       </Router>
     </ThemeProvider>
