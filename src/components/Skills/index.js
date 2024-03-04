@@ -64,6 +64,11 @@ const Skill = styled.div`
   box-shadow: rgba(23, 92, 230, 0.15) 0px 4px 24px;
   border-radius: 16px;
   padding: 18px 36px;
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+  }
   @media screen and (max-width: 768px) {
     max-width: 400px;
     padding: 10px 36px;
@@ -100,7 +105,12 @@ const SkillItem = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 10px;
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+  }
   @media (max-width: 768px) {
     font-size: 14px;
     padding: 8px 12px;
@@ -109,6 +119,8 @@ const SkillItem = styled.div`
     font-size: 14px;
     padding: 6px 12px;
   }
+  border: 0.1px solid #854ce6;
+  box-shadow: rgba(23, 92, 230, 0.15) 0px 4px 24px;
 `;
 
 const SkillImage = styled.img`
@@ -122,8 +134,7 @@ const Skills = () => {
       <Wrapper>
         <Title>Skills</Title>
         <Desc>
-          Here are some of my skills on which I have been working on for the
-          past 2 years.
+          Here are some of my skills on which I have been working on for the past 3 years.
         </Desc>
         <SkillsContainer>
           {skills.map((skill) => (

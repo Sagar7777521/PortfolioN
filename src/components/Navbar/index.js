@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { DiCssdeck } from "react-icons/di";
 import { FaBars } from "react-icons/fa";
 import { useTheme } from "styled-components";
+import { Bio } from "../../data/constants";
 
 export const Nav = styled.div`
   background-color: ${({ theme }) => theme.card_light};
@@ -117,6 +118,7 @@ export const GitHubButton = styled.a`
     font-size: 14px;
   }
 `;
+
 export const Span = styled.div`
   padding: 0 4px;
   font-weight: bold;
@@ -174,7 +176,7 @@ const Navbar = () => {
               cursor: "pointer",
             }}
           >
-            <DiCssdeck size="3rem" /> <Span>Portfolio</Span>
+            <DiCssdeck size="5rem" /> <Span>MY PORTFOLIO</Span>
           </a>
         </NavLogo>
         <MobileIcon>
@@ -188,11 +190,12 @@ const Navbar = () => {
           <NavLink href="#about">About</NavLink>
           <NavLink href="#skills">Skills</NavLink>
           <NavLink href="#experience">Experience</NavLink>
-          <NavLink href="#projects">Projects</NavLink>
           <NavLink href="#education">Education</NavLink>
         </NavItems>
         <ButtonContainer>
-          <GitHubButton>Github</GitHubButton>
+          <GitHubButton target="display" href={Bio.github}>
+            Github
+          </GitHubButton>
         </ButtonContainer>
         {open && (
           <MobileMenu open={open}>
@@ -226,14 +229,6 @@ const Navbar = () => {
                 setOpen(!open);
               }}
             >
-              Projects
-            </MobileMenuLink>
-            <MobileMenuLink
-              href="#education"
-              onClick={() => {
-                setOpen(!open);
-              }}
-            >
               Education
             </MobileMenuLink>
             <GitHubButton
@@ -243,6 +238,8 @@ const Navbar = () => {
                 color: "white",
                 width: "max-content",
               }}
+              href={Bio.github}
+              target="_blank"
             >
               Github Profile
             </GitHubButton>

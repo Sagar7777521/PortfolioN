@@ -1,9 +1,10 @@
 import React from "react";
-import HeroBgAnimation from "../HeroBgAnimation";
 import styled from "styled-components";
-import HeroImg from "../../images/HeroImage.jpg";
-import Typewriter from "typewriter-effect";
 import { Bio } from "../../data/constants";
+import Typewriter from "typewriter-effect";
+import HeroImg from "../../images/HeroImage.jpg";
+import { darkTheme } from "../../utils/Themes";
+import HeroBgAnimation from "../HeroBgAnimation";
 
 const HeroContainer = styled.div`
   background: ${({ theme }) => theme.card_light};
@@ -19,9 +20,8 @@ const HeroContainer = styled.div`
   }
   z-index: 1;
 
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 70% 95%, 0 100%);
+  ${"" /* clip-path: polygon(0 0, 100% 0, 100% 100%, 70% 95%, 0 100%); */}
 `;
-
 const HeroBg = styled.div`
   position: absolute;
   display: flex;
@@ -30,7 +30,7 @@ const HeroBg = styled.div`
   right: 0;
   bottom: 0;
   left: 0;
-  width: 80%;
+  width: 100%;
   height: 100%;
   max-width: 1360px;
   overflow: hidden;
@@ -45,39 +45,37 @@ const HeroBg = styled.div`
     padding: 0 0px;
   }
 `;
-
 const HeroInnerContainer = styled.div`
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
   max-width: 1100px;
 
-  @media screen and (max-width: 960px) {
+  @media (max-width: 960px) {
     flex-direction: column;
   }
 `;
-
 const HeroLeftContainer = styled.div`
   width: 100%;
   order: 1;
-  @media screen and (max-width: 960px) {
+  @media (max-width: 960px) {
     order: 2;
-    margin-bottom: 32px;
+    margin-bottom: 30px;
     display: flex;
     flex-direction: column;
     align-items: center;
   }
 
-  @media screen and (max-width: 640px) {
+  @media (max-width: 640px) {
     order: 2;
-    margin-bottom: 32px;
+    margin-bottom: 30px;
     display: flex;
     flex-direction: column;
     align-items: center;
   }
 `;
-
 const HeroRightContainer = styled.div`
   width: 100%;
   display: flex;
@@ -104,6 +102,8 @@ const Img = styled.img`
   max-height: 400px;
   border-radius: 50%;
   border: 2px solid ${({ theme }) => theme.primary};
+  animation: animate 5s ease-in-out infinite;
+  transition: all 1s ease-in-out;
 
   @media (max-width: 768px) {
     max-width: 400px;
@@ -114,24 +114,29 @@ const Img = styled.img`
     max-width: 280px;
     max-height: 280px;
   }
+  @keyframes animate {
+    0%, 100%{
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    }
+    50%{
+        border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+    }
 `;
-
 const Title = styled.div`
   font-weight: 700;
   font-size: 50px;
   color: ${({ theme }) => theme.text_primary};
   line-height: 68px;
-  @media screen and (max-width: 960px) {
+  @media (max-width: 960px) {
     text-align: center;
   }
 
-  @media screen and (max-width: 640px) {
+  @media (max-width: 640px) {
     font-size: 40px;
     line-height: 48px;
     margin-bottom: 8px;
   }
 `;
-
 const TextLoop = styled.div`
   font-weight: 600;
   font-size: 32px;
@@ -148,28 +153,25 @@ const TextLoop = styled.div`
     margin-bottom: 16px;
   }
 `;
-
 const Span = styled.span`
   color: ${({ theme }) => theme.primary};
   cursor: pointer;
 `;
-
 const SubTitle = styled.div`
   font-size: 20px;
   line-height: 32px;
   margin-bottom: 42px;
   color: ${({ theme }) => theme.text_primary + 95};
 
-  @media screen and (max-width: 960px) {
+  @media (max-width: 960px) {
     text-align: center;
   }
 
-  @media screen and (max-width: 640px) {
+  @media (max-width: 640px) {
     font-size: 16px;
     line-height: 32px;
   }
 `;
-
 const ResumeButton = styled.a`
     -webkit-appearance: button;
     -moz-appearance: button;
@@ -206,21 +208,21 @@ const ResumeButton = styled.a`
 
 `;
 
-const HeroSection = () => {
+function Hero() {
   return (
     <div id="about">
-      <HeroContainer>
-        <HeroBg>
+      <HeroContainer theme={darkTheme}>
+        <HeroBg theme={darkTheme}>
           <HeroBgAnimation />
         </HeroBg>
-        <HeroInnerContainer>
-          <HeroLeftContainer id="Left">
-            <Title>
+        <HeroInnerContainer theme={darkTheme}>
+          <HeroLeftContainer theme={darkTheme} id="Left">
+            <Title theme={darkTheme}>
               Hi, I am <br /> {Bio.name}
             </Title>
-            <TextLoop>
+            <TextLoop theme={darkTheme}>
               I am a
-              <Span>
+              <Span theme={darkTheme}>
                 <Typewriter
                   options={{
                     strings: Bio.roles,
@@ -230,19 +232,18 @@ const HeroSection = () => {
                 />
               </Span>
             </TextLoop>
-            <SubTitle>{Bio.description}</SubTitle>
-            <ResumeButton href={Bio.resume} target="_blank">
+            <SubTitle theme={darkTheme}>{Bio.description}</SubTitle>
+            <ResumeButton theme={darkTheme} href={Bio.resume} target="display">
               Check Resume
             </ResumeButton>
           </HeroLeftContainer>
-
-          <HeroRightContainer id="Right">
+          <HeroRightContainer theme={darkTheme} id="Right">
             <Img src={HeroImg} alt="hero-image" />
           </HeroRightContainer>
         </HeroInnerContainer>
       </HeroContainer>
     </div>
   );
-};
+}
 
-export default HeroSection;
+export default Hero;
