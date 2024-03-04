@@ -6,7 +6,7 @@ export const Bio = {
     "JavaScript Programmer",
   ],
   description:
-    "Driven Front End Web Designer and developer with 3 years of proven success crafting elegant, user-centric experiences. Proficient in Agile methodologies, I meticulously ensure pixel-perfect design and code that consistently elevates user engagement and conversion rates. Eager to leverage my skills and passion for innovation in a challenging role at a reputable organization like yours.",
+    "Aspiring Front-End Developer with 2.5 years of IT experience and 6 months of web development training. Passionate about creating user-centric experiences, I leverage design sensibilities and emerging development skills to craft visually appealing and functional web interfaces. Proficient in Agile methodologies, I'm eager to contribute to collaborative teams and translate my design vision into impactful code.",
 
   github: "https://github.com/Sagar7777521",
   resume:
