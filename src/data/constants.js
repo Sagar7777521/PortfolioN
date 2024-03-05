@@ -77,8 +77,7 @@ export const skills = [
       },
       {
         name: "MongoDB",
-        image:
-          "https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original-wordmark.svg",
+        image: "https://cdn.worldvectorlogo.com/logos/mongodb-icon-1.svg",
       },
       {
         name: "Firebase",
@@ -132,8 +131,11 @@ export const skills = [
       },
       {
         name: "VS Code",
-        image:
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/512px-Visual_Studio_Code_1.35_icon.svg.png?20210804221519",
+        image: "https://cdn.worldvectorlogo.com/logos/visual-studio-code-1.svg",
+      },
+      {
+        name: "Redis",
+        image: "https://cdn.worldvectorlogo.com/logos/redis.svg",
       },
       {
         name: "Postman",
