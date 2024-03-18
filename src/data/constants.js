@@ -59,8 +59,9 @@ export const skills = [
     title: "Backend",
     skills: [
       {
-        name: "Node Js",
-        image: "https://nodejs.org/static/images/logo.svg",
+        name: "Strapi",
+        image:
+          "https://cdn.worldvectorlogo.com/logos/strapi-full-logo-light.svg",
       },
       {
         name: "Express Js",
